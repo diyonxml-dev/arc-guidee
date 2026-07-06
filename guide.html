@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARC Guide</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins, sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    color:white;
+
+    background:
+    radial-gradient(circle at top,#a855f7 0%,transparent 35%),
+    linear-gradient(135deg,#090014,#16002b);
+
+}
+
+
+/* SIDEBAR */
+
+.sidebar{
+
+    width:270px;
+    height:100vh;
+    position:fixed;
+
+    background:
+    rgba(20,10,40,0.85);
+
+    backdrop-filter:blur(15px);
+
+    border-right:1px solid rgba(255,255,255,.12);
+
+    padding:25px;
+
+}
+
+
+.logo{
+
+    font-size:28px;
+    font-weight:700;
+
+}
+
+
+.subtitle{
+
+    color:#d8b4fe;
+    font-size:13px;
+
+    margin-top:5px;
+    margin-bottom:30px;
+
+}
+
+
+
+.menu button{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-bottom:10px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:#ddd;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.menu button:hover,
+.menu button.active{
+
+    background:#9333ea;
+
+    color:white;
+
+    box-shadow:
+    0 0 20px rgba(147,51,234,.6);
+
+}
+
+
+
+/* CONTENT */
+
+.content{
+
+    margin-left:270px;
+
+    width:100%;
+
+    padding:35px;
+
+}
+
+
+
+.card{
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    min-height:550px;
+
+}
+
+
+
+h1{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+h2{
+
+    color:#e9d5ff;
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+p{
+
+    color:#f3e8ff;
+
+    line-height:1.7;
+
+}
+
+
+
+ul,ol{
+
+    margin-left:25px;
+
+    line-height:2;
+
+}
+
+
+
+.box{
+
+    background:#120021;
+
+    border-left:
+
+    4px solid #c084fc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin:15px 0;
+
+}
+
+
+
+code{
+
+    color:#d8b4fe;
+
+    font-size:15px;
+
+}
+
+
+
+.staff{
+
+    background:#120021;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-top:10px;
+
+}
+
+
+
+.footer{
+
+    margin-top:30px;
+
+    color:#c084fc;
+
+    font-size:13px;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+
+body{
+
+    display:block;
+
+}
+
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+.content{
+
+    margin-left:0;
+
+    padding:20px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="sidebar">
+
+
+<div class="logo">
+🌙 ARC Guide
+</div>
+
+
+<div class="subtitle">
+Your Community Assistant
+</div>
+
+
+
+<div class="menu">
+
+
+<button class="active" onclick="showPage('home',this)">
+🏠 Selamat Datang
+</button>
+
+
+<button onclick="showPage('discord',this)">
+💬 Mengenal Discord
+</button>
+
+
+<button onclick="showPage('music',this)">
+🎵 Music System
+</button>
+
+
+<button onclick="showPage('voice',this)">
+🎤 Temp Voice
+</button>
+
+
+<button onclick="showPage('level',this)">
+⭐ Level System
+</button>
+
+
+<button onclick="showPage('staff',this)">
+👥 Staff Team
+</button>
+
+
+<button onclick="showPage('faq',this)">
+❓ FAQ
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="content">
+
+
+<div class="card" id="page">
+
+
+<h1>
+🌙 Selamat Datang di ARC
+</h1>
+
+
+<p>
+Memuat panduan...
+</p>
+
+
+</div>
+
+
+</div>
+<script>
+
+
+const pages = {
+
+
+home:`
+
+<h1>🌙 Selamat Datang di ARC</h1>
+
+
+<p>
+Selamat datang di <b>ARC (Anak Rebahan Community)</b>!
+Guide ini dibuat untuk membantu kamu memahami berbagai fitur yang tersedia di server agar dapat menikmati komunitas dengan lebih nyaman.
+</p>
+
+
+<h2>📚 Apa yang Bisa Kamu Lakukan di ARC?</h2>
+
+
+<ul>
+
+<li>💬 Berbincang dengan member lain.</li>
+
+<li>🎮 Mencari teman bermain.</li>
+
+<li>🎵 Mendengarkan musik bersama.</li>
+
+<li>🎤 Menggunakan Voice Channel.</li>
+
+<li>⭐ Menaikkan level dan mendapatkan role spesial.</li>
+
+</ul>
+
+
+
+<h2>✨ Untuk Member Baru</h2>
+
+
+<div class="box">
+
+Tidak perlu khawatir jika masih belum memahami semua fitur server.
+
+Silakan coba fitur yang tersedia dan jangan ragu bertanya jika membutuhkan bantuan.
+
+</div>
+
+
+<p>
+Selamat bergabung di ARC. Semoga kamu nyaman dan menikmati waktu bersama komunitas 💜
+</p>
+
+
+`,
+
+
+
+discord:`
+
+<h1>💬 Mengenal Discord</h1>
+
+
+<p>
+Discord adalah aplikasi komunikasi yang digunakan untuk berbicara, berdiskusi, bermain bersama, dan membangun komunitas.
+</p>
+
+
+
+<h2>📂 Jenis Channel</h2>
+
+
+<ul>
+
+<li>
+💬 <b>Text Channel</b><br>
+Tempat mengirim pesan, gambar, link, dan informasi.
+</li>
+
+
+<li>
+🎤 <b>Voice Channel</b><br>
+Tempat berbicara menggunakan suara bersama member lain.
+</li>
+
+
+<li>
+📢 <b>Announcement</b><br>
+Tempat informasi penting dari server.
+</li>
+
+
+</ul>
+
+
+
+<h2>👤 Mention</h2>
+
+
+<div class="box">
+
+<b>@Nama</b><br>
+Digunakan untuk memanggil seseorang.
+
+<br><br>
+
+<b>@everyone</b><br>
+Memberitahu semua anggota server (hanya role tertentu yang dapat menggunakan).
+
+</div>
+
+
+
+<h2>⚙️ Fitur Discord</h2>
+
+
+<ul>
+
+<li>🎭 Role → Memberikan akses dan tanda khusus.</li>
+
+<li>📌 Pin → Menyimpan pesan penting.</li>
+
+<li>🔔 Notification → Mengatur notifikasi server.</li>
+
+<li>🎧 Voice Control → Mengatur suara saat berada di VC.</li>
+
+</ul>
+
+
+
+`,
+
+
+
+music:`
+
+<h1>🎵 Music System</h1>
+
+
+<p>
+ARC menggunakan bot musik <b>JM - 212</b> untuk menemani waktu santai bersama teman.
+</p>
+
+
+
+<h2>🎧 Bot Music ARC</h2>
+
+
+<div class="box">
+
+🎵 JM - 212
+
+<br>
+
+🎵 JM1 - 212
+
+<br>
+
+🎵 JM2 - 212
+
+<br>
+
+🎵 JM3 - 212
+
+<br>
+
+🎵 JM4 - 212
+
+</div>
+
+
+
+<h2>▶️ Cara Memutar Lagu</h2>
+
+
+<ol>
+
+<li>
+Masuk ke Voice Channel terlebih dahulu.
+</li>
+
+
+<li>
+Buka channel command music.
+</li>
+
+
+<li>
+Gunakan command:
+</li>
+
+</ol>
+
+
+
+<div class="box">
+
+<code>
+m!play nama lagu
+</code>
+
+
+<br><br>
+
+
+Contoh:
+
+
+<br>
+
+
+<code>
+m!play Alan Walker Faded
+</code>
+
+
+</div>
+
+
+
+
+<h2>🎮 Command Dasar</h2>
+
+
+
+<div class="box">
+
+
+▶ Memutar lagu
+
+<br>
+
+<code>m!play</code>
+
+
+<br><br>
+
+
+⏭ Melewati lagu
+
+<br>
+
+<code>m!skip</code>
+
+
+<br><br>
+
+
+⏸ Menghentikan sementara
+
+<br>
+
+<code>m!pause</code>
+
+
+<br><br>
+
+
+▶ Melanjutkan lagu
+
+<br>
+
+<code>m!resume</code>
+
+
+<br><br>
+
+
+📃 Melihat antrean lagu
+
+<br>
+
+<code>m!queue</code>
+
+
+<br><br>
+
+
+⏹ Menghentikan musik
+
+<br>
+
+<code>m!stop</code>
+
+
+</div>
+
+
+
+<h2>❗ Jika Bot Tidak Berjalan</h2>
+
+
+<ul>
+
+<li>Pastikan sudah masuk Voice Channel.</li>
+
+<li>Pastikan command ditulis dengan benar.</li>
+
+<li>Pastikan JM - 212 sedang online.</li>
+
+</ul>
+
+
+
+`,
+
+
+
+voice:`
+
+<h1>🎤 Temp Voice</h1>
+
+
+<p>
+Temp Voice adalah fitur yang membuat Voice Channel sementara secara otomatis.
+Kamu dapat membuat ruang sendiri tanpa harus meminta Staff.
+</p>
+
+
+
+<h2>➕︱Buat Channel</h2>
+
+
+<ol>
+
+<li>
+Masuk ke channel <b>➕︱Buat Channel</b>.
+</li>
+
+
+<li>
+Tunggu beberapa detik.
+</li>
+
+
+<li>
+Channel pribadi akan dibuat otomatis.
+</li>
+
+
+</ol>
+
+
+
+<h2>🕹︱interface</h2>
+
+
+<p>
+Gunakan channel <b>🕹︱interface</b> untuk mengatur Temp Voice kamu.
+</p>
+
+
+
+<div class="box">
+
+
+🔒 Mengunci channel
+
+<br><br>
+
+🔓 Membuka akses
+
+<br><br>
+
+✏️ Mengubah nama channel
+
+<br><br>
+
+👥 Mengatur jumlah anggota
+
+<br><br>
+
+👑 Mengatur pemilik channel
+
+
+</div>
+
+
+
+<p>
+Jika semua orang keluar, channel sementara akan otomatis dihapus agar server tetap rapi.
+</p>
+
+
+`,
+
+
+
+level:`
+
+<h1>⭐ Level System</h1>
+
+
+<p>
+Level menunjukkan tingkat keaktifan kamu di server ARC.
+</p>
+
+
+
+<h2>📈 Cara Mendapatkan XP</h2>
+
+
+<ul>
+
+<li>💬 Aktif mengirim pesan di Text Channel.</li>
+
+<li>🎉 Berinteraksi dengan komunitas.</li>
+
+<li>🏆 Mengikuti kegiatan server.</li>
+
+</ul>
+
+
+
+<div class="box">
+
+Catatan:
+
+<br><br>
+
+XP dari Voice Channel belum tersedia karena fitur tersebut membutuhkan premium bot.
+
+</div>
+
+
+
+<h2>🎁 Keuntungan Level</h2>
+
+
+<ul>
+
+<li>Mendapatkan role level.</li>
+
+<li>Menunjukkan keaktifan dalam komunitas.</li>
+
+</ul>
+
+
+`,
+staff:`
+
+<h1>👥 Staff Team ARC</h1>
+
+
+<p>
+Staff ARC bertugas membantu member, menjaga kenyamanan server, dan memastikan komunitas berjalan dengan baik.
+</p>
+
+
+
+<h2>👑 Admin</h2>
+
+
+<div class="staff">
+
+<b>👑 PASEP</b>
+
+<br>
+
+Admin ARC
+
+<br>
+
+Mengatur dan mengelola server.
+
+</div>
+
+
+
+<h2>🛡 Staff</h2>
+
+
+<div class="staff">
+
+<b>🛡 Dyon</b>
+
+<br>
+
+Staff ARC
+
+<br>
+
+Membantu member yang membutuhkan bantuan.
+
+</div>
+
+
+
+<div class="staff">
+
+<b>🛡 Nnux</b>
+
+<br>
+
+Staff ARC
+
+<br>
+
+Membantu menjaga aktivitas dan kenyamanan komunitas.
+
+</div>
+
+
+
+<div class="staff">
+
+<b>🛡 Napzio</b>
+
+<br>
+
+Staff ARC
+
+<br>
+
+Membantu mengatur dan menjaga server ARC.
+
+</div>
+
+
+
+<h2>💜 Membutuhkan Bantuan?</h2>
+
+
+<div class="box">
+
+Jangan ragu untuk bertanya kepada Staff ARC apabila mengalami masalah atau belum memahami fitur server.
+
+</div>
+
+
+`,
+
+
+
+faq:`
+
+<h1>❓ Frequently Asked Questions</h1>
+
+
+
+<h2>🎵 Bot Music Tidak Berfungsi?</h2>
+
+
+<ul>
+
+<li>
+Pastikan kamu sudah masuk Voice Channel.
+</li>
+
+
+<li>
+Pastikan command yang digunakan benar.
+</li>
+
+
+<li>
+Pastikan JM - 212 sedang online.
+</li>
+
+
+</ul>
+
+
+
+
+<h2>🎤 Temp Voice Tidak Muncul?</h2>
+
+
+<ul>
+
+<li>
+Masuk melalui channel ➕︱Buat Channel.
+</li>
+
+
+<li>
+Pastikan bot Temp Voice sedang aktif.
+</li>
+
+
+<li>
+Gunakan menu pada 🕹︱interface.
+</li>
+
+
+</ul>
+
+
+
+
+<h2>💬 Belum Mengerti Discord?</h2>
+
+
+<p>
+Tidak masalah, semua orang membutuhkan waktu untuk memahami fitur Discord.
+Kamu dapat melihat bagian 💬 Mengenal Discord untuk mempelajari dasar-dasarnya.
+</p>
+
+
+
+<h2>🆘 Masih Bingung?</h2>
+
+
+<div class="box">
+
+Hubungi Staff ARC, kami siap membantu.
+
+</div>
+
+
+
+<h2>🌙 Terima Kasih</h2>
+
+
+<p>
+Terima kasih sudah menjadi bagian dari ARC.
+Mari bersama-sama membuat komunitas ini menjadi tempat yang nyaman dan menyenangkan.
+</p>
+
+
+`
+
+
+};
+
+
+
+
+document.getElementById("page").innerHTML = pages.home;
+
+
+
+function showPage(page, button){
+
+
+document.getElementById("page").innerHTML = pages[page];
+
+
+
+document.querySelectorAll(".menu button")
+.forEach(btn => {
+
+btn.classList.remove("active");
+
+});
+
+
+
+button.classList.add("active");
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
